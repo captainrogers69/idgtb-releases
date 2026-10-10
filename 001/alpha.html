@@ -1,0 +1,1214 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="web_dashboard" name="shell-type" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Outfit:wght@500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @layer base {
+        html,
+        body {
+          margin: 0;
+          padding: 0;
+        }
+        body {
+          overscroll-behavior: none;
+        }
+        main > :first-child {
+          margin-top: 0 !important;
+        }
+        main > :last-child {
+          margin-bottom: 0 !important;
+        }
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface": "#1a1c1c",
+              "on-tertiary": "#ffffff",
+              "surface-container-high": "#e8e8e8",
+              "inverse-on-surface": "#f0f1f1",
+              "on-primary-fixed-variant": "#1d4e4e",
+              "on-error-container": "#93000a",
+              background: "#f9f9f9",
+              "tertiary-fixed": "#bfecdf",
+              "on-tertiary-container": "#9ecabe",
+              tertiary: "#133f36",
+              "on-secondary": "#ffffff",
+              "inverse-primary": "#9fcfcf",
+              "surface-container-low": "#f3f3f3",
+              error: "#ba1a1a",
+              "on-secondary-container": "#2a6f63",
+              "on-primary": "#ffffff",
+              primary: "#083f3f",
+              outline: "#707978",
+              "surface-dim": "#dadada",
+              "surface-container": "#eeeeee",
+              "primary-fixed": "#baeceb",
+              "tertiary-container": "#2d564d",
+              "on-secondary-fixed-variant": "#005046",
+              "on-primary-fixed": "#002020",
+              "on-tertiary-fixed-variant": "#244e45",
+              "on-error": "#ffffff",
+              "surface-tint": "#376666",
+              secondary: "#23695d",
+              "primary-fixed-dim": "#9fcfcf",
+              "secondary-container": "#abf0e1",
+              "on-secondary-fixed": "#00201b",
+              "on-tertiary-fixed": "#00201a",
+              "outline-variant": "#c0c8c7",
+              "on-surface-variant": "#404848",
+              "surface-bright": "#f9f9f9",
+              "primary-container": "#265656",
+              "surface-variant": "#e2e2e2",
+              "inverse-surface": "#2f3131",
+              "tertiary-fixed-dim": "#a4cfc4",
+              "secondary-fixed": "#abf0e1",
+              "surface-container-highest": "#e2e2e2",
+              "on-background": "#1a1c1c",
+              surface: "#f9f9f9",
+              "on-primary-container": "#99c9c9",
+              "surface-container-lowest": "#ffffff",
+              "secondary-fixed-dim": "#90d3c5",
+              "error-container": "#ffdad6",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            spacing: {
+              "space-xl": "1.5rem",
+              "margin-compact": "1rem",
+              "space-2xl": "2rem",
+              "space-lg": "1rem",
+              margin: "1.5rem",
+              gutter: "1rem",
+              "space-xs": "0.375rem",
+              "space-sm": "0.5rem",
+              "gutter-compact": "0.75rem",
+              "space-md": "0.75rem",
+              "space-xxs": "0.25rem",
+            },
+            fontFamily: {
+              "label-md": ["Plus Jakarta Sans"],
+              "body-md": ["Plus Jakarta Sans"],
+              "body-sm": ["Plus Jakarta Sans"],
+              "data-tabular": ["JetBrains Mono"],
+              display: ["Outfit"],
+              "data-mono-sm": ["JetBrains Mono"],
+              "headline-lg": ["Outfit"],
+              "label-sm": ["Plus Jakarta Sans"],
+              "body-lg": ["Plus Jakarta Sans"],
+              "headline-sm": ["Outfit"],
+              "headline-md": ["Outfit"],
+            },
+            fontSize: {
+              "label-md": ["14px", { lineHeight: "20px", fontWeight: "500" }],
+              "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+              "body-sm": ["12px", { lineHeight: "16px", fontWeight: "400" }],
+              "data-tabular": [
+                "14px",
+                {
+                  lineHeight: "20px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "500",
+                },
+              ],
+              display: [
+                "32px",
+                {
+                  lineHeight: "40px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "data-mono-sm": [
+                "12px",
+                { lineHeight: "16px", fontWeight: "400" },
+              ],
+              "headline-lg": [
+                "24px",
+                {
+                  lineHeight: "32px",
+                  letterSpacing: "-0.015em",
+                  fontWeight: "700",
+                },
+              ],
+              "label-sm": [
+                "11px",
+                {
+                  lineHeight: "16px",
+                  letterSpacing: "0.04em",
+                  fontWeight: "600",
+                },
+              ],
+              "body-lg": ["16px", { lineHeight: "24px", fontWeight: "500" }],
+              "headline-sm": [
+                "16px",
+                { lineHeight: "24px", letterSpacing: "0em", fontWeight: "600" },
+              ],
+              "headline-md": [
+                "20px",
+                {
+                  lineHeight: "28px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "600",
+                },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-surface font-body-md text-body-md text-on-surface antialiased select-none"
+  >
+    <header
+      class="fixed top-0 left-0 right-0 z-50 h-10 bg-primary-container shadow-[0_1px_8px_rgba(20,52,56,0.12)]"
+    >
+      <div class="h-10 w-full px-space-md flex items-center justify-between">
+        <div class="flex items-center gap-space-md">
+          <div class="flex items-center gap-space-xs text-on-primary">
+            <div
+              class="w-6 h-6 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-fixed shadow-[0_1px_4px_rgba(0,0,0,0.1)]"
+            >
+              <span class="material-symbols-outlined text-[15px]">face</span>
+            </div>
+            <div class="flex items-center gap-space-xs">
+              <span
+                class="font-headline-sm text-headline-sm font-bold tracking-tight text-on-primary"
+                >ID BABA</span
+              ><span
+                class="px-space-xs py-0.5 rounded-full bg-secondary text-on-secondary font-label-sm text-[10px] tracking-wider uppercase font-semibold"
+                >AI</span
+              >
+            </div>
+          </div>
+          <div class="h-4 w-px bg-outline-variant/30"></div>
+          <span
+            class="font-label-sm text-[10px] uppercase tracking-widest text-on-primary-container"
+            >Guest Identity &amp; Risk Intelligence</span
+          >
+        </div>
+        <div class="flex items-center gap-space-md">
+          <div
+            class="flex items-center gap-space-xs text-on-primary-container font-label-sm text-label-sm"
+          >
+            <span
+              class="inline-block w-2 h-2 rounded-full bg-secondary-fixed animate-pulse"
+            ></span
+            ><span class="font-data-mono-sm text-data-mono-sm text-on-primary"
+              >Station #02</span
+            >
+          </div>
+          <div class="flex items-center">
+            <div
+              class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"
+            >
+              <span
+                class="material-symbols-outlined text-on-primary text-[18px]"
+                >person</span
+              >
+            </div>
+          </div>
+          <div class="flex items-center -mr-space-md">
+            <button
+              class="h-10 w-11 flex items-center justify-center text-on-primary-container hover:bg-white/10 hover:text-on-primary transition-colors"
+              title="Minimize"
+              type="button"
+            >
+              <span class="material-symbols-outlined text-[16px]"
+                >minimize</span
+              ></button
+            ><button
+              class="h-10 w-11 flex items-center justify-center text-on-primary-container hover:bg-white/10 hover:text-on-primary transition-colors"
+              title="Maximize / Restore"
+              type="button"
+            >
+              <span class="material-symbols-outlined text-[16px]"
+                >check_box_outline_blank</span
+              ></button
+            ><button
+              class="h-10 w-12 flex items-center justify-center text-on-primary-container hover:bg-error hover:text-on-error transition-colors"
+              title="Close"
+              type="button"
+            >
+              <span class="material-symbols-outlined text-[16px]">close</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <aside
+      class="fixed left-0 top-10 bottom-[34px] w-60 z-40 bg-surface-container-lowest shadow-[0_2px_12px_rgba(20,52,56,0.06)] flex flex-col justify-between pt-space-md pb-space-sm"
+    >
+      <div class="flex flex-col gap-space-sm px-space-xs">
+        <div class="px-space-sm py-space-xs">
+          <span
+            class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold"
+            >Desk Operations</span
+          >
+        </div>
+        <nav
+          class="flex flex-col gap-space-xxs"
+          data-active-classes="bg-secondary-container text-on-secondary-fixed-variant font-bold shadow-sm"
+        >
+          <a
+            aria-current="page"
+            class="h-9 px-space-sm rounded-lg flex items-center gap-space-sm transition-colors bg-secondary-container text-on-secondary-fixed-variant font-bold shadow-sm"
+            data-path="arrival-intake-queue"
+            href="#"
+            ><span class="material-symbols-outlined text-[18px]"
+              >sensor_occupied</span
+            ><span>Arrival Queue</span
+            ><span
+              class="ml-auto font-data-mono-sm text-data-mono-sm px-1.5 py-0.5 rounded-full bg-secondary text-on-secondary text-[11px]"
+              >4</span
+            ></a
+          ><a
+            class="h-9 px-space-sm rounded-lg flex items-center gap-space-sm font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors"
+            data-path="live-scanner-feed"
+            href="#"
+            ><span class="material-symbols-outlined text-[18px]"
+              >document_scanner</span
+            ><span>ID OCR Scanner</span></a
+          ><a
+            class="h-9 px-space-sm rounded-lg flex items-center gap-space-sm font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors"
+            data-path="in-house-guests"
+            href="#"
+            ><span class="material-symbols-outlined text-[18px]">hotel</span
+            ><span>In-House Guests</span
+            ><span
+              class="ml-auto font-data-tabular text-data-tabular text-outline text-[12px]"
+              >128</span
+            ></a
+          ><a
+            class="h-9 px-space-sm rounded-lg flex items-center gap-space-sm font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors"
+            data-path="risk-watch-intelligence"
+            href="#"
+            ><span class="material-symbols-outlined text-[18px]">shield</span
+            ><span>Risk Intelligence</span></a
+          ><a
+            class="h-9 px-space-sm rounded-lg flex items-center gap-space-sm font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors"
+            data-path="room-key-rfid"
+            href="#"
+            ><span class="material-symbols-outlined text-[18px]">key</span
+            ><span>Key Encoder</span></a
+          >
+        </nav>
+      </div>
+      <div class="px-space-xs pt-space-xs">
+        <div class="p-space-sm rounded-lg bg-surface-container-low">
+          <div class="flex items-center justify-between mb-space-xxs">
+            <span
+              class="font-label-sm text-label-sm font-semibold text-on-surface-variant"
+              >Front Desk 01</span
+            ><span
+              class="inline-block w-2 h-2 rounded-full bg-secondary-fixed"
+            ></span>
+          </div>
+          <p class="font-body-sm text-body-sm text-outline truncate">
+            Agent: Sarah Vance (ID: 9840)
+          </p>
+          <a
+            class="mt-space-xs inline-flex items-center gap-space-xs font-label-sm text-label-sm text-secondary hover:text-primary transition-colors"
+            data-path="terminal-diagnostics"
+            href="#"
+            ><span class="material-symbols-outlined text-[14px]">tune</span
+            ><span>Peripheral Setup</span></a
+          >
+        </div>
+      </div>
+    </aside>
+    <div class="pl-60 pb-[34px]">
+      <main class="w-full pt-10 min-h-screen bg-background text-on-surface">
+        <div class="flex flex-col w-full">
+          <div class="flex w-full min-h-[calc(100vh-74px)]">
+            <!-- LEFT PANEL: 340px sticky queue -->
+            <aside
+              class="w-[340px] shrink-0 bg-surface-container-low flex flex-col justify-between shadow-sm"
+            >
+              <div class="flex flex-col">
+                <!-- Search & Control Header -->
+                <div
+                  class="p-space-md flex flex-col gap-space-sm bg-surface-container-lowest shadow-sm"
+                >
+                  <div class="relative w-full">
+                    <span
+                      class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-[18px] text-outline pointer-events-none"
+                      >search</span
+                    >
+                    <input
+                      class="w-full h-9 pl-9 pr-3 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md placeholder:text-outline outline-none focus:bg-surface-container-low transition-all"
+                      placeholder="Search guests, rooms, DL#..."
+                      type="text"
+                      value="Jane Patel"
+                    />
+                  </div>
+                  <div class="flex items-center justify-between gap-space-xs">
+                    <div
+                      class="flex items-center gap-1.5 p-1 rounded-lg bg-surface-container-low"
+                    >
+                      <button
+                        class="px-2.5 py-1 rounded bg-surface-container-lowest text-primary font-label-sm text-label-sm shadow-sm"
+                        type="button"
+                      >
+                        Today (4)
+                      </button>
+                      <button
+                        class="px-2.5 py-1 rounded text-outline hover:text-on-surface font-label-sm text-label-sm transition-colors"
+                        type="button"
+                      >
+                        Queue
+                      </button>
+                      <button
+                        class="px-2.5 py-1 rounded text-outline hover:text-on-surface font-label-sm text-label-sm transition-colors"
+                        type="button"
+                      >
+                        Archive
+                      </button>
+                    </div>
+                    <button
+                      class="h-8 px-2.5 rounded-lg bg-secondary-container text-on-secondary-fixed-variant hover:bg-secondary hover:text-on-secondary transition-colors font-label-sm text-label-sm flex items-center gap-1 shadow-sm"
+                      type="button"
+                    >
+                      <span class="material-symbols-outlined text-[16px]"
+                        >person_add</span
+                      >
+                      <span>New</span>
+                    </button>
+                  </div>
+                </div>
+                <!-- Table Column Headers -->
+                <div
+                  class="h-9 px-space-md bg-surface-container-low flex items-center justify-between font-headline-sm text-label-sm uppercase tracking-wider text-outline select-none"
+                >
+                  <span class="flex items-center gap-1">
+                    <span>Guest Name</span>
+                    <span class="material-symbols-outlined text-[14px]"
+                      >arrow_drop_down</span
+                    >
+                  </span>
+                  <span>Check-in Time</span>
+                </div>
+                <!-- Dense Desktop Row List -->
+                <div
+                  class="flex flex-col overflow-y-auto divide-y-0"
+                  id="guestQueueList"
+                >
+                  <!-- 1. JANE PATEL (Selected) -->
+                  <div
+                    class="relative h-11 px-space-md bg-secondary-container text-on-secondary-fixed-variant flex items-center justify-between cursor-pointer shadow-sm group"
+                  >
+                    <div
+                      class="absolute left-0 top-0 bottom-0 w-[3px] bg-secondary"
+                    ></div>
+                    <div class="flex items-center gap-2 min-w-0 pr-2">
+                      <span
+                        class="material-symbols-outlined text-[18px] text-secondary"
+                        >verified</span
+                      >
+                      <span
+                        class="font-headline-sm text-headline-sm uppercase truncate font-bold tracking-tight text-on-surface"
+                        >JANE PATEL</span
+                      >
+                    </div>
+                    <span
+                      class="font-data-tabular text-data-tabular text-outline text-[13px] shrink-0"
+                      >02:28 PM</span
+                    >
+                  </div>
+                  <!-- 2. MARCUS LEE -->
+                  <div
+                    class="h-11 px-space-md bg-surface-container-lowest hover:bg-surface-container text-on-surface flex items-center justify-between cursor-pointer transition-colors group"
+                  >
+                    <div class="flex items-center gap-2 min-w-0 pr-2">
+                      <span
+                        class="material-symbols-outlined text-[18px] text-outline group-hover:text-primary"
+                        >check_circle</span
+                      >
+                      <span
+                        class="font-headline-sm text-body-md uppercase truncate font-semibold"
+                        >MARCUS LEE</span
+                      >
+                    </div>
+                    <span
+                      class="font-data-tabular text-data-tabular text-outline text-[13px] shrink-0"
+                      >01:55 PM</span
+                    >
+                  </div>
+                  <!-- 3. PRIYA SHAH -->
+                  <div
+                    class="h-11 px-space-md bg-surface-container-lowest hover:bg-surface-container text-on-surface flex items-center justify-between cursor-pointer transition-colors group"
+                  >
+                    <div class="flex items-center gap-2 min-w-0 pr-2">
+                      <span
+                        class="material-symbols-outlined text-[18px] text-outline group-hover:text-primary"
+                        >check_circle</span
+                      >
+                      <span
+                        class="font-headline-sm text-body-md uppercase truncate font-semibold"
+                        >PRIYA SHAH</span
+                      >
+                    </div>
+                    <span
+                      class="font-data-tabular text-data-tabular text-outline text-[13px] shrink-0"
+                      >11:10 AM</span
+                    >
+                  </div>
+                  <!-- 4. DANIEL OKAFOR -->
+                  <div
+                    class="h-11 px-space-md bg-surface-container-lowest hover:bg-surface-container text-on-surface flex items-center justify-between cursor-pointer transition-colors group"
+                  >
+                    <div class="flex items-center gap-2 min-w-0 pr-2">
+                      <span
+                        class="material-symbols-outlined text-[18px] text-outline"
+                        >history</span
+                      >
+                      <span
+                        class="font-headline-sm text-body-md uppercase truncate font-semibold"
+                        >DANIEL OKAFOR</span
+                      >
+                    </div>
+                    <span
+                      class="font-data-tabular text-data-tabular text-outline text-[12px] shrink-0"
+                      >10/09/2026</span
+                    >
+                  </div>
+                  <!-- 5. SARAH CONNER -->
+                  <div
+                    class="h-11 px-space-md bg-surface-container-lowest hover:bg-surface-container text-on-surface flex items-center justify-between cursor-pointer transition-colors group"
+                  >
+                    <div class="flex items-center gap-2 min-w-0 pr-2">
+                      <span
+                        class="material-symbols-outlined text-[18px] text-outline"
+                        >history</span
+                      >
+                      <span
+                        class="font-headline-sm text-body-md uppercase truncate font-semibold"
+                        >SARAH CONNER</span
+                      >
+                    </div>
+                    <span
+                      class="font-data-tabular text-data-tabular text-outline text-[12px] shrink-0"
+                      >10/09/2026</span
+                    >
+                  </div>
+                  <!-- 6. CARLOS MENDEZ -->
+                  <div
+                    class="h-11 px-space-md bg-surface-container-lowest hover:bg-surface-container text-on-surface flex items-center justify-between cursor-pointer transition-colors group"
+                  >
+                    <div class="flex items-center gap-2 min-w-0 pr-2">
+                      <span
+                        class="material-symbols-outlined text-[18px] text-outline"
+                        >history</span
+                      >
+                      <span
+                        class="font-headline-sm text-body-md uppercase truncate font-semibold"
+                        >CARLOS MENDEZ</span
+                      >
+                    </div>
+                    <span
+                      class="font-data-tabular text-data-tabular text-outline text-[12px] shrink-0"
+                      >10/08/2026</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Left Panel Bottom Quick Metric -->
+              <div
+                class="p-space-md bg-surface-container-lowest shadow-sm flex items-center justify-between"
+              >
+                <div class="flex items-center gap-2">
+                  <div
+                    class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-secondary"
+                  >
+                    <span class="material-symbols-outlined text-[18px]"
+                      >verified_user</span
+                    >
+                  </div>
+                  <div>
+                    <div
+                      class="font-label-sm text-label-sm font-bold text-on-surface"
+                    >
+                      OCR Accuracy
+                    </div>
+                    <div
+                      class="font-data-mono-sm text-data-mono-sm text-outline"
+                    >
+                      99.4% today
+                    </div>
+                  </div>
+                </div>
+                <span
+                  class="font-data-tabular text-headline-sm font-bold text-secondary"
+                  >99.4%</span
+                >
+              </div>
+            </aside>
+            <!-- RIGHT CONTENT AREA -->
+            <section
+              class="flex-1 p-6 overflow-y-auto bg-surface flex flex-col gap-space-lg"
+            >
+              <!-- Section 1: Guest Header Bar -->
+              <div
+                class="flex flex-wrap items-center justify-between gap-space-md bg-surface-container-lowest p-space-md rounded-xl shadow-sm"
+              >
+                <div class="flex items-center gap-space-md flex-wrap">
+                  <div class="flex flex-col">
+                    <div class="flex items-center gap-space-sm">
+                      <h1
+                        class="font-headline-lg text-display text-primary tracking-tight font-bold"
+                      >
+                        JANE PATEL
+                      </h1>
+                      <!-- Verified Badge -->
+                      <span
+                        class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-fixed-variant font-label-sm text-label-sm shadow-sm font-semibold"
+                      >
+                        <span
+                          class="w-2 h-2 rounded-full bg-secondary animate-ping"
+                        ></span>
+                        <span>Checked In · Room 214</span>
+                      </span>
+                    </div>
+                    <div
+                      class="flex items-center gap-3 mt-1 text-on-surface-variant font-body-sm text-body-sm"
+                    >
+                      <span
+                        class="font-data-mono-sm text-data-mono-sm text-outline"
+                        >CONF: #HK-882910</span
+                      >
+                      <span>•</span>
+                      <span>Deluxe King Suite</span>
+                      <span>•</span>
+                      <span>Oct 11 – Oct 14 (3 Nights)</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-space-sm">
+                  <button
+                    class="h-9 px-4 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-primary font-headline-sm text-label-md flex items-center gap-2 shadow-sm transition-colors"
+                    type="button"
+                  >
+                    <span class="material-symbols-outlined text-[18px]"
+                      >person_add</span
+                    >
+                    <span>New Guest</span>
+                  </button>
+                  <button
+                    class="h-9 px-4 rounded-lg bg-primary-container hover:bg-secondary text-on-primary font-headline-sm text-label-md flex items-center gap-2 shadow-sm transition-colors"
+                    type="button"
+                  >
+                    <span class="material-symbols-outlined text-[18px]"
+                      >person_search</span
+                    >
+                    <span>View details</span>
+                  </button>
+                </div>
+              </div>
+              <!-- Section 2: Split Workspace (Scanned Card Well & Empty State Preview) -->
+              <div
+                class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg items-start"
+              >
+                <!-- Main ID Card Card Well (7 Cols) -->
+                <div class="xl:col-span-7 flex flex-col gap-space-sm">
+                  <div
+                    class="rounded-xl bg-surface-container-low p-space-lg shadow-sm flex flex-col gap-space-md"
+                  >
+                    <!-- Header of card well -->
+                    <div class="flex items-center justify-between pb-space-xs">
+                      <div class="flex items-center gap-2">
+                        <span
+                          class="material-symbols-outlined text-[20px] text-secondary"
+                          >badge</span
+                        >
+                        <span
+                          class="font-headline-sm text-headline-sm text-on-surface font-semibold"
+                        >
+                          ID Card (Front) — Pennsylvania Driver License
+                        </span>
+                      </div>
+                      <button
+                        class="px-2.5 py-1 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-secondary font-label-md text-label-md flex items-center gap-1.5 shadow-sm transition-colors"
+                        type="button"
+                      >
+                        <span class="material-symbols-outlined text-[16px]"
+                          >flip_camera_android</span
+                        >
+                        <span>Show back</span>
+                      </button>
+                    </div>
+                    <!-- Photorealistic Pennsylvania DL Graphic Representation (1.58:1 aspect) -->
+                    <div
+                      class="relative w-full aspect-[1.58/1] max-w-[530px] mx-auto rounded-xl shadow-md overflow-hidden bg-gradient-to-br from-[#ffffff] via-[#e8f4f3] to-[#d6ece7] text-on-surface p-4 flex flex-col justify-between select-none"
+                    >
+                      <!-- Security microprint background watermark (SVG Keystone) -->
+                      <div
+                        class="absolute inset-0 opacity-10 pointer-events-none flex items-center justify-center"
+                      >
+                        <svg
+                          class="fill-primary"
+                          height="240"
+                          viewbox="0 0 100 100"
+                          width="240"
+                        >
+                          <polygon points="10,20 90,20 80,90 20,90"></polygon>
+                        </svg>
+                      </div>
+                      <!-- DL Top Header Strip -->
+                      <div
+                        class="relative z-10 flex items-center justify-between pb-2 bg-gradient-to-r from-primary to-secondary text-on-primary px-3 py-1.5 rounded-lg -mx-1 -mt-1 shadow-sm"
+                      >
+                        <div class="flex items-center gap-2">
+                          <div
+                            class="w-5 h-5 rounded bg-secondary-container text-on-secondary-fixed flex items-center justify-center font-bold text-[10px]"
+                          >
+                            PA
+                          </div>
+                          <div class="flex flex-col">
+                            <span
+                              class="font-headline-sm text-label-sm tracking-wider uppercase font-bold text-on-primary leading-none"
+                              >Commonwealth of Pennsylvania</span
+                            >
+                            <span
+                              class="text-[10px] tracking-widest uppercase text-tertiary-fixed font-semibold"
+                              >Driver's License · REAL ID</span
+                            >
+                          </div>
+                        </div>
+                        <div
+                          class="flex items-center gap-1 bg-surface-container-lowest/20 px-2 py-0.5 rounded text-[11px] font-bold tracking-tight"
+                        >
+                          <span
+                            class="material-symbols-outlined text-[14px] text-tertiary-fixed"
+                            >star</span
+                          >
+                          <span>USA</span>
+                        </div>
+                      </div>
+                      <!-- Body: Photo + Key/Value Fields -->
+                      <div
+                        class="relative z-10 flex items-start gap-4 mt-2 flex-1"
+                      >
+                        <!-- Photo Container with security stamp -->
+                        <div
+                          class="relative w-28 h-36 rounded-lg bg-surface-container-high shadow-inner overflow-hidden shrink-0"
+                        >
+                          <!-- Guest Portrait -->
+                          <img
+                            class="w-full h-full object-cover"
+                            data-alt="High-resolution security ID photo portrait of a professional South Asian woman in her late thirties with subtle warm studio lighting against a standard blue credential backdrop."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6d8J7sYcj3IODs3_qP8aMw5SwbqyUMD_SsAxbdlC4svcFk0rV4-k06AXo45T8L8tIG3l_JL0YhN9_w9R1o5hrEIHjR3BXkGYJ_3zrtSBOSttZzbv1ewPHP4LW7cbiJmY_VWcc-MUEZDS0ghZ9KIp5QJKwzjohMuTPXheGPGtWV343Q9QwmCSNY-yUJv2FB-k1dufc6CRjq9VrvK4YtyCJJ24tEAV5xVgJM6UBHxcXZl8HBbVRQZzb"
+                          />
+                          <div
+                            class="absolute bottom-1 right-1 px-1 py-0.5 rounded bg-primary/80 text-[8px] font-data-mono-sm text-on-primary uppercase font-bold"
+                          >
+                            PA-DOT
+                          </div>
+                          <!-- Ghost UV overlay indicator -->
+                          <div
+                            class="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent pointer-events-none"
+                          ></div>
+                        </div>
+                        <!-- Credential Info Matrix -->
+                        <div
+                          class="flex-1 flex flex-col justify-between h-36 font-data-tabular"
+                        >
+                          <div>
+                            <div class="flex justify-between items-baseline">
+                              <span
+                                class="font-label-sm text-[10px] uppercase text-outline"
+                                >DL NO.</span
+                              >
+                              <span
+                                class="font-data-tabular text-body-lg font-bold text-primary tracking-wide"
+                                >32 495 696</span
+                              >
+                            </div>
+                            <div class="mt-1">
+                              <span
+                                class="font-headline-md text-headline-sm font-bold uppercase tracking-tight text-on-surface block leading-tight"
+                                >PATEL</span
+                              >
+                              <span
+                                class="font-headline-sm text-label-md font-semibold uppercase tracking-tight text-on-surface block"
+                                >JANE ELIZABETH</span
+                              >
+                            </div>
+                            <div
+                              class="mt-1 font-body-sm text-[11px] text-on-surface-variant leading-tight"
+                            >
+                              <div>1736 SAMPLE ST</div>
+                              <div>BENSALEM, PA 19020-4102</div>
+                            </div>
+                          </div>
+                          <!-- Date grid -->
+                          <div
+                            class="grid grid-cols-2 gap-2 pt-1 bg-surface-container-lowest/60 p-1.5 rounded-lg"
+                          >
+                            <div>
+                              <div
+                                class="font-label-sm text-[9px] uppercase text-outline leading-none"
+                              >
+                                DOB (MM/DD/YYYY)
+                              </div>
+                              <div
+                                class="font-data-tabular text-body-sm font-bold text-on-surface"
+                              >
+                                01/10/1985
+                              </div>
+                            </div>
+                            <div>
+                              <div
+                                class="font-label-sm text-[9px] uppercase text-outline leading-none"
+                              >
+                                EXP (MM/DD/YYYY)
+                              </div>
+                              <div
+                                class="font-data-tabular text-body-sm font-bold text-error"
+                              >
+                                01/11/2028
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Bottom Barcode & Machine Readable Preview edge -->
+                      <div
+                        class="relative z-10 flex items-center justify-between pt-2 mt-1"
+                      >
+                        <div class="flex items-center gap-2">
+                          <span
+                            class="font-label-sm text-[10px] uppercase text-outline"
+                            >CLASS: C · END: NONE · RESTR: B</span
+                          >
+                        </div>
+                        <!-- Mini PDF417 graphic swatch -->
+                        <div
+                          class="h-3 w-32 bg-on-surface/80 rounded opacity-60 flex items-center justify-around px-1 overflow-hidden"
+                        >
+                          <div class="w-1 h-full bg-surface"></div>
+                          <div class="w-0.5 h-full bg-surface"></div>
+                          <div class="w-2 h-full bg-surface"></div>
+                          <div class="w-0.5 h-full bg-surface"></div>
+                          <div class="w-1.5 h-full bg-surface"></div>
+                          <div class="w-1 h-full bg-surface"></div>
+                          <div class="w-3 h-full bg-surface"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- OCR Verified Indicators -->
+                    <div class="grid grid-cols-3 gap-space-sm pt-space-xs">
+                      <div
+                        class="p-space-sm rounded-lg bg-surface-container-lowest flex items-center gap-2"
+                      >
+                        <span
+                          class="material-symbols-outlined text-[18px] text-secondary"
+                          >check_circle</span
+                        >
+                        <div class="flex flex-col">
+                          <span
+                            class="font-label-sm text-[10px] text-outline uppercase"
+                            >Face Match</span
+                          >
+                          <span
+                            class="font-data-tabular text-label-md font-bold text-primary"
+                            >99.8% Match</span
+                          >
+                        </div>
+                      </div>
+                      <div
+                        class="p-space-sm rounded-lg bg-surface-container-lowest flex items-center gap-2"
+                      >
+                        <span
+                          class="material-symbols-outlined text-[18px] text-secondary"
+                          >security</span
+                        >
+                        <div class="flex flex-col">
+                          <span
+                            class="font-label-sm text-[10px] text-outline uppercase"
+                            >UV Hologram</span
+                          >
+                          <span
+                            class="font-data-tabular text-label-md font-bold text-primary"
+                            >Passed</span
+                          >
+                        </div>
+                      </div>
+                      <div
+                        class="p-space-sm rounded-lg bg-surface-container-lowest flex items-center gap-2"
+                      >
+                        <span
+                          class="material-symbols-outlined text-[18px] text-secondary"
+                          >database</span
+                        >
+                        <div class="flex flex-col">
+                          <span
+                            class="font-label-sm text-[10px] text-outline uppercase"
+                            >AAMVA PDF417</span
+                          >
+                          <span
+                            class="font-data-tabular text-label-md font-bold text-primary"
+                            >Decoded</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Remark Card -->
+                  <div
+                    class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-start gap-space-sm"
+                  >
+                    <span
+                      class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5"
+                      >assignment</span
+                    >
+                    <div class="flex flex-col">
+                      <span
+                        class="font-label-sm text-label-sm uppercase tracking-wide text-on-surface-variant font-bold"
+                        >Front Desk Remark</span
+                      >
+                      <p class="font-body-md text-body-md text-outline mt-0.5">
+                        Returning corporate guest (<strong
+                          class="text-on-surface font-semibold"
+                          >Apex Technologies</strong
+                        >). Prefers high floor away from elevator. Keys
+                        pre-encoded for RFID East Wing access.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Section 3: Right Column - Empty State Reference Card & Inspector -->
+                <div class="xl:col-span-5 flex flex-col gap-space-lg">
+                  <!-- Empty State Comparison Module -->
+                  <div
+                    class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-md"
+                  >
+                    <div class="flex items-center justify-between pb-space-xxs">
+                      <div class="flex items-center gap-2">
+                        <span
+                          class="material-symbols-outlined text-[18px] text-outline"
+                          >tune</span
+                        >
+                        <span
+                          class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-bold"
+                          >Scanner Feed Standby View</span
+                        >
+                      </div>
+                      <span
+                        class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-data-mono-sm text-[10px]"
+                        >IDLE DEMO</span
+                      >
+                    </div>
+                    <!-- Illustration & Instruction -->
+                    <div
+                      class="flex flex-col items-center justify-center p-6 rounded-lg bg-surface-container-low text-center"
+                    >
+                      <div
+                        class="relative w-28 h-28 mb-3 flex items-center justify-center"
+                      >
+                        <!-- Scanner slot container -->
+                        <div
+                          class="w-24 h-16 rounded-lg bg-surface-container-high shadow-inner flex flex-col items-center justify-center relative overflow-hidden"
+                        >
+                          <!-- LED light indicator -->
+                          <div
+                            class="absolute top-1 right-2 w-1.5 h-1.5 rounded-full bg-secondary-fixed animate-pulse"
+                          ></div>
+                          <!-- Feed Slot line -->
+                          <div
+                            class="w-16 h-1 rounded-full bg-outline-variant/60 my-1"
+                          ></div>
+                          <span
+                            class="font-data-mono-sm text-[9px] text-outline"
+                            >CR5400 TRAY</span
+                          >
+                        </div>
+                        <!-- Animated Floating ID Card Entering Scanner -->
+                        <div
+                          class="absolute -top-1 w-16 h-10 rounded bg-secondary-container shadow-md flex items-center justify-center -rotate-6 transform hover:rotate-0 transition-transform"
+                        >
+                          <span
+                            class="material-symbols-outlined text-on-secondary-fixed text-[18px]"
+                            >credit_card</span
+                          >
+                        </div>
+                      </div>
+                      <h4
+                        class="font-headline-sm text-headline-sm text-on-surface font-semibold"
+                      >
+                        Insert an ID card to check in a guest
+                      </h4>
+                      <p
+                        class="font-body-sm text-body-sm text-outline max-w-xs mt-1"
+                      >
+                        Place either side of the card on the scanner glass.
+                        Auto-recognition triggers in &lt;1.2s.
+                      </p>
+                      <div
+                        class="mt-4 flex items-center gap-2 text-secondary font-label-sm text-label-sm font-semibold"
+                      >
+                        <span class="material-symbols-outlined text-[16px]"
+                          >sensors</span
+                        >
+                        <span>Optical Presence Sensor: Armed</span>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Section 4: Status Pill State Sheet Reference -->
+                  <div
+                    class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm"
+                  >
+                    <div class="flex items-center justify-between pb-space-xxs">
+                      <div class="flex items-center gap-2">
+                        <span
+                          class="material-symbols-outlined text-[18px] text-secondary"
+                          >palette</span
+                        >
+                        <span
+                          class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-bold"
+                          >Peripheral State Sheet</span
+                        >
+                      </div>
+                      <span class="font-data-mono-sm text-[11px] text-outline"
+                        >7 Presets</span
+                      >
+                    </div>
+                    <!-- List of All 7 Status Pills Required -->
+                    <div
+                      class="grid grid-cols-1 sm:grid-cols-2 gap-2 font-label-sm text-label-sm"
+                    >
+                      <!-- 1. Connected -->
+                      <div
+                        class="px-3 py-2 rounded-lg bg-surface-container-low flex items-center justify-between"
+                      >
+                        <div class="flex items-center gap-2">
+                          <span
+                            class="w-2.5 h-2.5 rounded-full bg-[#2E9E6B] shadow-[0_0_6px_#2E9E6B]"
+                          ></span>
+                          <span class="font-semibold text-on-surface"
+                            >Connected</span
+                          >
+                        </div>
+                        <span class="text-[10px] text-outline font-data-mono-sm"
+                          >Thales CR5400</span
+                        >
+                      </div>
+                      <!-- 2. Paused -->
+                      <div
+                        class="px-3 py-2 rounded-lg bg-surface-container-low flex items-center justify-between"
+                      >
+                        <div class="flex items-center gap-2">
+                          <span
+                            class="w-2.5 h-2.5 rounded-full bg-[#D98A1C]"
+                          ></span>
+                          <span class="font-semibold text-on-surface"
+                            >Paused</span
+                          >
+                        </div>
+                        <span class="text-[10px] text-outline font-data-mono-sm"
+                          >Standby</span
+                        >
+                      </div>
+                      <!-- 3. Waiting for reader... -->
+                      <div
+                        class="px-3 py-2 rounded-lg bg-surface-container-low flex items-center justify-between"
+                      >
+                        <div class="flex items-center gap-2">
+                          <span
+                            class="w-2.5 h-2.5 rounded-full bg-[#9CA0A8]"
+                          ></span>
+                          <span class="font-medium text-on-surface"
+                            >Waiting for reader…</span
+                          >
+                        </div>
+                        <span class="text-[10px] text-outline font-data-mono-sm"
+                          >Polling</span
+                        >
+                      </div>
+                      <!-- 4. Setup needed -->
+                      <div
+                        class="px-3 py-2 rounded-lg bg-surface-container-low flex items-center justify-between"
+                      >
+                        <div class="flex items-center gap-2">
+                          <span
+                            class="w-2.5 h-2.5 rounded-full bg-[#D98A1C]"
+                          ></span>
+                          <span class="font-semibold text-on-surface"
+                            >Setup needed</span
+                          >
+                        </div>
+                        <span class="text-[10px] text-outline font-data-mono-sm"
+                          >Calibrate</span
+                        >
+                      </div>
+                      <!-- 5. Error -->
+                      <div
+                        class="px-3 py-2 rounded-lg bg-surface-container-low flex items-center justify-between"
+                      >
+                        <div class="flex items-center gap-2">
+                          <span
+                            class="w-2.5 h-2.5 rounded-full bg-[#D64545] shadow-[0_0_6px_#D64545]"
+                          ></span>
+                          <span class="font-semibold text-error">Error</span>
+                        </div>
+                        <span class="text-[10px] text-error font-data-mono-sm"
+                          >COM3 Fail</span
+                        >
+                      </div>
+                      <!-- 6. Scanner helper missing -->
+                      <div
+                        class="px-3 py-2 rounded-lg bg-surface-container-low flex items-center justify-between"
+                      >
+                        <div class="flex items-center gap-2">
+                          <span
+                            class="w-2.5 h-2.5 rounded-full bg-[#D98A1C]"
+                          ></span>
+                          <span class="font-medium text-on-surface"
+                            >Scanner helper missing</span
+                          >
+                        </div>
+                        <span class="text-[10px] text-outline font-data-mono-sm"
+                          >Service 404</span
+                        >
+                      </div>
+                      <!-- 7. Connecting... -->
+                      <div
+                        class="px-3 py-2 rounded-lg bg-surface-container-low flex items-center justify-between sm:col-span-2"
+                      >
+                        <div class="flex items-center gap-2">
+                          <span
+                            class="w-2.5 h-2.5 rounded-full bg-[#9CA0A8] animate-ping"
+                          ></span>
+                          <span class="font-medium text-on-surface"
+                            >Connecting…</span
+                          >
+                        </div>
+                        <span class="text-[10px] text-outline font-data-mono-sm"
+                          >Handshake in progress</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+        <script>
+          // Simple micro-interaction for desktop row selection
+          document.querySelectorAll("#guestQueueList > div").forEach((row) => {
+            row.addEventListener("click", () => {
+              document
+                .querySelectorAll("#guestQueueList > div")
+                .forEach((r) => {
+                  r.classList.remove(
+                    "bg-secondary-container",
+                    "text-on-secondary-fixed-variant",
+                  );
+                  r.classList.add(
+                    "bg-surface-container-lowest",
+                    "text-on-surface",
+                  );
+                  const indicator = r.querySelector(".absolute.left-0");
+                  if (indicator) indicator.remove();
+                });
+              row.classList.remove(
+                "bg-surface-container-lowest",
+                "text-on-surface",
+              );
+              row.classList.add(
+                "bg-secondary-container",
+                "text-on-secondary-fixed-variant",
+              );
+              const bar = document.createElement("div");
+              bar.className =
+                "absolute left-0 top-0 bottom-0 w-[3px] bg-secondary";
+              row.prepend(bar);
+            });
+          });
+        </script>
+      </main>
+    </div>
+    <footer
+      class="fixed bottom-0 left-0 right-0 z-50 h-[34px] bg-surface-container-lowest shadow-[0_-1px_6px_rgba(20,52,56,0.06)] px-space-lg flex items-center justify-between text-body-sm"
+    >
+      <div
+        class="flex items-center gap-space-lg font-data-tabular text-[13px] text-on-surface"
+      >
+        <div class="flex items-center gap-space-xs">
+          <span class="font-body-sm text-body-sm text-outline"
+            >Today's Check In(s):</span
+          ><span class="font-semibold text-primary font-data-tabular">4</span>
+        </div>
+        <div class="h-3.5 w-px bg-surface-variant"></div>
+        <div class="flex items-center gap-space-xs">
+          <span class="font-body-sm text-body-sm text-outline">Guests:</span
+          ><span class="font-semibold text-primary font-data-tabular">128</span>
+        </div>
+        <div class="h-3.5 w-px bg-surface-variant"></div>
+        <div class="flex items-center gap-space-xs">
+          <span class="font-body-sm text-body-sm text-outline">PMS:</span
+          ><span class="font-body-sm text-body-sm text-secondary font-medium"
+            >Opera Cloud Synced</span
+          >
+        </div>
+      </div>
+      <div class="flex items-center gap-space-md">
+        <div
+          class="flex items-center gap-space-xs text-outline font-data-mono-sm text-data-mono-sm text-[11px]"
+        >
+          <span class="material-symbols-outlined text-[14px]">schedule</span
+          ><span>14:32:09 LOCAL</span>
+        </div>
+        <div class="group relative">
+          <button
+            class="h-6 px-space-sm rounded-full bg-surface-container-low flex items-center gap-space-xs hover:bg-secondary-container transition-colors shadow-[0_1px_4px_rgba(20,52,56,0.04)]"
+            type="button"
+          >
+            <span class="w-2 h-2 rounded-full bg-secondary"></span
+            ><span class="font-label-sm text-[12px] font-semibold text-primary"
+              >Connected</span
+            >
+          </button>
+          <div
+            class="pointer-events-none absolute bottom-8 right-0 mb-1 hidden group-hover:flex flex-col items-end whitespace-nowrap z-50"
+          >
+            <div
+              class="px-space-sm py-1 rounded bg-inverse-surface text-inverse-on-surface font-label-sm text-[11px] shadow-[0_4px_12px_rgba(20,52,56,0.14)]"
+            >
+              Thales CR5400 · Click for diagnostics
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
